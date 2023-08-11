@@ -1,0 +1,68 @@
+
+server inits
+client tries to connect
+client connects
+client sends login frame
+if could not login - send error frame to server -> the server will disconnect the client.
+
+else (could log in) -server returns CONNECTED frame
+two threads are being created - keyBoardListener and serverListener
+* keyBoardListener - we have a function runKeyBoardThread() that will lisntns to the keyboard and does the sendprocess:
+     listen to keboard part:
+-       the input part:
+        const short bufsize = 1024;
+        char buf[bufsize];
+        std::cin.getline(buf, bufsize);
+        std::string line(buf);
+    process line part:
+        now just use sendprocess with line:
+        identify the command and then stringToFrame
+    convert frame to string -> 
+    activate sendframeascii(the string) 
+        
+        and this is while (thread !interupted and !clientshouldterminate)
+    
+    end thread
+
+* serverListener - runs on runServerListener() = listens to the server and read the input buffer:
+    intiate empty string(called emptyString) which will hold server's string--> does bufferToString(with emptyString) -> 
+    stringToFrame(with emptyString which is not empty anymore because he holds the server's string) -> 
+    -> does recieveProcess() [some of the commands should only be printed, 
+    and some should be saved in a data structure]
+    the while is the same as the first thread
+
+- after the client gets disconnected, finishing both threads and waiting for them to join.
+
+
+
+
+
+
+
+
+
+report block:
+- 
+
+
+        
+
+
+
+
+
+
+
+either the client receives frames from the server or lehefeh.
+
+frame the client sends -> check validity for length, and stringToFrame, 
+and frameToString, and sendframeascii with the string that was created.
+
+
+******* remember to close the threads *********
+
+
+
+
+
+
