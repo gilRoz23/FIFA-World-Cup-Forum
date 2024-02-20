@@ -37,3 +37,4 @@ Run the following command to start the client and interact with the server:
 ```bash
 ./client
 ```
+Enjoy!
