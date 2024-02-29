@@ -1,4 +1,4 @@
-# World Cup Forum
+# FIFA World Cup Forum
 
 This repository contains the completed code for the World CupForum.
 
